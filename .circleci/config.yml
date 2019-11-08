@@ -35,4 +35,4 @@ workflows:
 
       - gen_artifacts:
           requires:
-            - build_android
+            - build
