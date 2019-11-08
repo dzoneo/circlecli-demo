@@ -14,12 +14,7 @@ jobs:
       - run:
           name: Building
           command: npm run build
-  
-  gen_artifacts:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:12.12.0
-    steps:
+
       - store_artifacts:
           path: ./dist
           destination: artifacts
@@ -32,7 +27,3 @@ workflows:
           filters:
             branches:
               only: master
-
-      - gen_artifacts:
-          requires:
-            - build
