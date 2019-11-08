@@ -30,7 +30,8 @@ workflows:
     jobs:
       - build:
           filters:
-            branches: master
+            branches:
+              only: master
 
       - gen_artifacts:
           requires:
